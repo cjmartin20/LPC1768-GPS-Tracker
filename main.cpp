@@ -18,6 +18,9 @@ BufferedSerial ultimateGPS(GPS_TX_PIN, GPS_RX_PIN, 9600);
 //Adafruit_GPS gps(&ultimateGPS);
 
 int main() {
+
+    DigitalOut led1(LED1);
+
     char c;
     int i,d;
     float latt;
@@ -26,6 +29,13 @@ int main() {
         ultimateGPS.read(abuf, sizeof(abuf));
         c = abuf[0];
         printf("%c", c);
+        printf("This");
+        for (int i = 0; i<3; i++) {
+			led1 = 1;
+			ThisThread::sleep_for( 10 );
+			led1 = 0;
+			ThisThread::sleep_for( 45 );
+		}
 
         /*
         for(int i=0; i<20; i++) {
