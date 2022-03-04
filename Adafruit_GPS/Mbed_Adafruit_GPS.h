@@ -18,6 +18,7 @@ All text above must be included in any redistribution
 ****************************************/
 #include "mbed.h"
 #include <stdint.h>
+#include <string.h>
 #include <math.h>
 #include <ctype.h>
 
