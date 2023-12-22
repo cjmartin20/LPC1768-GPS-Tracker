@@ -17,12 +17,18 @@ mbed target LPC1768
 mdbed toolchain ARM
 # GCC_ARM
 #specifiy toolchain as GCC_ARM
-mbed target GCC_ARM
+mbed toolchain GCC_ARM
 #configure path for compiler location (can do either of the following)
 #To set path to compiler do 1 of the following:
 #1- Mbed cli config (local first, then global)
 #the -G sets the path globally so other projects can use that compiler too
+#Linux
 mbed config -G GCC_ARM_PATH /usr/bin/
+#Windows
+mbed config -G GCC_ARM_PATH "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\bin"
+#sometimes the path gets messege up, add something similiar to Env variables
+C:\Users\Colton\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\Scripts
+
 #2- Environment variables
 export MBED_GCC_ARM_PATH=/usr/bin/arm-none-eabi-gcc
 #to compile the Mbed program

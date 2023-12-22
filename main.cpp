@@ -12,8 +12,8 @@ cjmartin@eastex.net
 #define GPS_RX_PIN       p10
 
 char abuf[1];
-BufferedSerial ultimateGPS(GPS_TX_PIN, GPS_RX_PIN, 9600);
-//static BufferedSerial pc(USBTX, USBRX, 9600); 
+static BufferedSerial ultimateGPS(GPS_TX_PIN, GPS_RX_PIN, 9600);
+static BufferedSerial pc(USBTX, USBRX, 9600); 
     
 //Adafruit_GPS gps(&ultimateGPS);
 
@@ -26,10 +26,12 @@ int main() {
     float latt;
     //gps.begin(9600);
     while (true) {
-        ultimateGPS.read(abuf, sizeof(abuf));
-        c = abuf[0];
-        printf("%c", c);
-        printf("This");
+        //char msg[] = "Testing Serial Write...\n";
+        //pc.write(msg, sizeof(msg));
+        //printf("Testing printf...\n");
+        char sent[] = "_____________________________________________________________________\n";
+        ultimateGPS.read(&sent, sizeof(sent));
+        pc.write(&sent, sizeof(sent));
         for (int i = 0; i<3; i++) {
 			led1 = 1;
 			ThisThread::sleep_for( 10 );
