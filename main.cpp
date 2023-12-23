@@ -29,10 +29,10 @@ int main() {
         //char msg[] = "Testing Serial Write...\n";
         //pc.write(msg, sizeof(msg));
         //printf("Testing printf...\n");
-        char sent[] = "_____________________________________________________________________\n";
-        ultimateGPS.read(&sent, sizeof(sent));
-        pc.write(&sent, sizeof(sent));
+        char sent[] = "Print Works\n";
+        //ultimateGPS.read(&sent, sizeof(sent));
         for (int i = 0; i<3; i++) {
+            pc.write(&sent, sizeof(sent));
 			led1 = 1;
 			ThisThread::sleep_for( 10 );
 			led1 = 0;
