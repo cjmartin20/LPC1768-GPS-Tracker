@@ -14,7 +14,7 @@ mbed add mbed-os
 mbed target LPC1768
 #specify toolchain
 #if you have inbed Studo installed or are using a paid toolchain
-mdbed toolchain ARM
+mbed toolchain ARM
 # GCC_ARM
 #specifiy toolchain as GCC_ARM
 mbed toolchain GCC_ARM
