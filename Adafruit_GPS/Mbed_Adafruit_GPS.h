@@ -76,7 +76,7 @@ class Adafruit_GPS {
   public:
     void begin(int baud); 
 
-    Adafruit_GPS(BufferedSerial *ser);
+    Adafruit_GPS(UnbufferedSerial *ser);
 
     char *lastNMEA(void);
     bool newNMEAreceived();
@@ -110,7 +110,7 @@ class Adafruit_GPS {
     uint8_t LOCUS_type, LOCUS_mode, LOCUS_config, LOCUS_interval, LOCUS_distance, LOCUS_speed, LOCUS_status, LOCUS_percent;
   private:
     bool paused;
-    BufferedSerial *gpsSerial;
+    UnbufferedSerial * gpsSerial();
 };
  
 #endif
