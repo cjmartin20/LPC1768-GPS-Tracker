@@ -13,6 +13,7 @@ Written by Colton Martin
 cjmartin@eastex.net
 */
 #include "mbed.h"
+__FPU_PRvvjj
 #include "./Adafruit_GPS/Mbed_Adafruit_GPS.h"
 #include "USBSerial.h"
 #include "stdio.h"
